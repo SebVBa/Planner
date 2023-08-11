@@ -19,12 +19,16 @@ public class Task implements Entity{
 
     @Override
     public boolean isComplete() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        if (completed) {
+            return true;
+        }else{
+            return false;
+        }
     }
 
     @Override
     public Object[] toArrayObject() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+        return new Object[]{this.num,this.name,this.description,this.startDate,this.endDate,this.completed,this.responsible.toString()};
     }
 
     public Task(int num, String name, String description, String startDate, String endDate, Member responsible) {
